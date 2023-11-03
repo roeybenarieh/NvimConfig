@@ -10,10 +10,60 @@ require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+
+    -- ui staff
+    { import = "lazyvim.plugins.extras.ui.edgy" }, -- predefined windows layout
+
     -- import any extras modules here
-    -- { import = "lazyvim.plugins.extras.lang.typescript" },
-    -- { import = "lazyvim.plugins.extras.lang.json" },
-    -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
+    { import = "lazyvim.plugins.extras.coding.codeium" },         -- AI autocompletion
+    { import = "lazyvim.plugins.extras.coding.yanky" },           -- imporoved yank and put functionalities
+    { import = "lazyvim.plugins.extras.editor.aerial" },          -- Neovim plugin for a code outline window
+    { import = "lazyvim.plugins.extras.editor.leap" },            -- jump to words in the document
+    { import = "lazyvim.plugins.extras.editor.navic" },           -- Simple winbar/statusline plugin that shows your current code context
+    { import = "lazyvim.plugins.extras.editor.symbols-outline" }, -- A tree like view for symbols in Neovim using LSP
+    { import = "lazyvim.plugins.extras.editor.mini-files" },      -- Navigate and manipulate file system
+
+    -- dap
+    { import = "lazyvim.plugins.extras.dap.core" },               -- dap capabilities
+    { import = "lazyvim.plugins.extras.dap.nlua" },               -- Debug adapter for Neovim plugins
+
+    -- formatting
+    { import = "lazyvim.plugins.extras.formatting.prettier" },    -- Prettier formmatter
+
+    --linting
+    { import = "lazyvim.plugins.extras.linting.eslint" },
+
+
+    -- LSP
+    { import = "lazyvim.plugins.extras.lang.python" },
+    { import = "lazyvim.plugins.extras.lang.go" },
+    { import = "lazyvim.plugins.extras.lang.java" },
+    { import = "lazyvim.plugins.extras.lang.docker" },
+    { import = "lazyvim.plugins.extras.lang.json" },
+    { import = "lazyvim.plugins.extras.lang.yaml" },
+    { import = "lazyvim.plugins.extras.lang.markdown" },
+
+    { import = "lazyvim.plugins.extras.lang.rust" },
+    { import = "lazyvim.plugins.extras.lang.tailwind" },
+    { import = "lazyvim.plugins.extras.lang.terraform" },
+    { import = "lazyvim.plugins.extras.lang.typescript" },
+
+
+    -- highliting
+    { import = "lazyvim.plugins.extras.lang.python-semshi" }, -- syntax highliting for python
+    { import = "lazyvim.plugins.extras.util.mini-hipatterns" }, -- common highliting solutions
+
+
+    -- none ls
+    { import = "lazyvim.plugins.extras.lsp.none-ls" },
+
+    --testing framework (testing runners are needed for each language)
+    { import = "lazyvim.plugins.extras.test.core" },
+
+    --utils
+    { import = "lazyvim.plugins.extras.util.dot" }, -- hyperland parser (https://github.com/hyprwm/Hyprland)
+    { import = "lazyvim.plugins.extras.util.project" }, -- The superior project management solution for neovim.
+
     -- import/override with your plugins
     { import = "plugins" },
   },
