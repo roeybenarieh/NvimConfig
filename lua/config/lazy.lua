@@ -20,7 +20,6 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.editor.aerial" },          -- Neovim plugin for a code outline window
     { import = "lazyvim.plugins.extras.editor.leap" },            -- jump to words in the document
     { import = "lazyvim.plugins.extras.editor.navic" },           -- Simple winbar/statusline plugin that shows your current code context
-    { import = "lazyvim.plugins.extras.editor.symbols-outline" }, -- A tree like view for symbols in Neovim using LSP
     { import = "lazyvim.plugins.extras.editor.mini-files" },      -- Navigate and manipulate file system
 
     -- dap
