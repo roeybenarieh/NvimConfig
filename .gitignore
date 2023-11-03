@@ -6,3 +6,7 @@ debug
 foo.*
 *.log
 data
+
+# files created after running lazyvim
+lazyvim.json
+lazy-lock.json
