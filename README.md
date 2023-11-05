@@ -1,4 +1,8 @@
 # 💤 LazyVim
 
 A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
-Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
+Refer to the [documentation](https://lazyvim.github.io/installation).
+
+## TODO
+- fix the python dap, make sure venv packages are included in the debugger
+- install akinsho/toggleterm.nvim
