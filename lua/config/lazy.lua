@@ -33,21 +33,6 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.linting.eslint" }, -- javascript static linting
 
 
-    -- LSP
-    { import = "lazyvim.plugins.extras.lang.python" },
-    { import = "lazyvim.plugins.extras.lang.go" },
-    { import = "lazyvim.plugins.extras.lang.java" },
-    { import = "lazyvim.plugins.extras.lang.docker" },
-    { import = "lazyvim.plugins.extras.lang.json" },
-    { import = "lazyvim.plugins.extras.lang.yaml" },
-    { import = "lazyvim.plugins.extras.lang.markdown" },
-
-    { import = "lazyvim.plugins.extras.lang.rust" },
-    { import = "lazyvim.plugins.extras.lang.tailwind" },
-    { import = "lazyvim.plugins.extras.lang.terraform" },
-    { import = "lazyvim.plugins.extras.lang.typescript" },
-
-
     -- highliting
     { import = "lazyvim.plugins.extras.lang.python-semshi" }, -- syntax highliting for python
     { import = "lazyvim.plugins.extras.util.mini-hipatterns" }, -- common highliting solutions
@@ -62,6 +47,22 @@ require("lazy").setup({
     --utils
     { import = "lazyvim.plugins.extras.util.dot" }, -- hyperland parser (https://github.com/hyprwm/Hyprland)
     { import = "lazyvim.plugins.extras.util.project" }, -- The superior project management solution for neovim.
+
+
+    -- LSP
+    { import = "lazyvim.plugins.extras.lang.python" },
+    { import = "lazyvim.plugins.extras.lang.go" },
+    { import = "lazyvim.plugins.extras.lang.java" },
+    { import = "lazyvim.plugins.extras.lang.docker" },
+    { import = "lazyvim.plugins.extras.lang.json" },
+    { import = "lazyvim.plugins.extras.lang.yaml" },
+    { import = "lazyvim.plugins.extras.lang.markdown" },
+
+    { import = "lazyvim.plugins.extras.lang.rust" },
+    { import = "lazyvim.plugins.extras.lang.tailwind" },
+    { import = "lazyvim.plugins.extras.lang.terraform" },
+    { import = "lazyvim.plugins.extras.lang.typescript" },
+
 
     -- import/override with your plugins
     { import = "plugins" },
