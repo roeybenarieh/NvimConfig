@@ -24,7 +24,6 @@ require("lazy").setup({
 
     -- dap
     { import = "lazyvim.plugins.extras.dap.core" },               -- dap capabilities
-    { import = "lazyvim.plugins.extras.dap.nlua" },               -- Debug adapter for Neovim plugins
 
     -- formatting
     { import = "lazyvim.plugins.extras.formatting.prettier" },    -- Prettier formmatter
