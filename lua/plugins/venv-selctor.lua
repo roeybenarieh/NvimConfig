@@ -165,27 +165,6 @@ function M.setup(adapter_python_path, opts)
     local configs = {} -- or dap.configurations.python
     dap.configurations.python = configs
     table.insert(configs, {
-      -- lunching main.py with debug
-      type = "python", -- the type here established the link to the adapter definition: `dap.adapters.python`
-      request = "launch",
-      name = "Launch main.py",
-
-      -- Options below are for debugpy
-      -- see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for supported options
-      program = "main.py",
-      console = opts.console,
-      pythonPath = opts.pythonPath,
-    })
-    table.insert(configs, {
-      -- lunching the current opened file with debug
-      type = "python", -- the type here established the link to the adapter definition: `dap.adapters.python`
-      request = "launch",
-      name = "Launch current file",
-      program = "${file}", -- This configuration will launch the current file if used.
-      console = opts.console,
-      pythonPath = opts.pythonPath,
-    })
-    table.insert(configs, {
       type = "python",
       request = "launch",
       name = "Launch file",
@@ -452,12 +431,36 @@ local python_dap_configurations = function(venv_path, venv_python)
   -- https://github.com/zaldis/NeovimConfig/blob/main/nvim/lua/config/dap.lua
   -- https://github.com/ldelossa/nvim-dap-projects
 
-  -- all the debug configurations are writen above
+  -- dap.configurations.python = {
+  --     {
+  --         -- lunching main.py with debug
+  --         type = 'python', -- the type here established the link to the adapter definition: `dap.adapters.python`
+  --         request = 'launch',
+  --         name = "Launch main.py",
 
+  --         -- Options below are for debugpy
+  --         -- see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for supported options
+  --         program = "main.py",
+  --         pythonPath = venv_python,
+  --         console = 'integratedTerminal'
+  --     },
+  --     {
+  --         -- lunching the current opened file with debug
+  --         type = 'python', -- the type here established the link to the adapter definition: `dap.adapters.python`
+  --         request = 'launch',
+  --         name = "Launch current file",
+
+  --         -- Options below are for debugpy
+  --         -- see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for supported options
+  --         program = "${file}", -- This configuration will launch the current file if used.
+  --         pythonPath = venv_python,
+  --         console = 'integratedTerminal'
+  --     }
+  -- }
   local debugpy_path = require("mason-registry").get_package("debugpy"):get_install_path()
   local setup_opts = {
-    -- include_configs = true,
-    -- console = "integratedTerminal",
+    include_configs = true,
+    console = "integratedTerminal",
     pythonPath = venv_python,
   }
 
