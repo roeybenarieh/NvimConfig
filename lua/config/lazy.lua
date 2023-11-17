@@ -15,27 +15,25 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.ui.edgy" }, -- predefined windows layout
 
     -- import any extras modules here
-    { import = "lazyvim.plugins.extras.coding.codeium" },         -- AI autocompletion
-    { import = "lazyvim.plugins.extras.coding.yanky" },           -- imporoved yank and put functionalities
-    { import = "lazyvim.plugins.extras.editor.aerial" },          -- Neovim plugin for a code outline window
-    { import = "lazyvim.plugins.extras.editor.leap" },            -- jump to words in the document
-    { import = "lazyvim.plugins.extras.editor.navic" },           -- Simple winbar/statusline plugin that shows your current code context
-    { import = "lazyvim.plugins.extras.editor.mini-files" },      -- Navigate and manipulate file system
+    { import = "lazyvim.plugins.extras.coding.codeium" }, -- AI autocompletion
+    { import = "lazyvim.plugins.extras.coding.yanky" }, -- imporoved yank and put functionalities
+    { import = "lazyvim.plugins.extras.editor.aerial" }, -- Neovim plugin for a code outline window
+    { import = "lazyvim.plugins.extras.editor.leap" }, -- jump to words in the document
+    { import = "lazyvim.plugins.extras.editor.navic" }, -- Simple winbar/statusline plugin that shows your current code context
+    { import = "lazyvim.plugins.extras.editor.mini-files" }, -- Navigate and manipulate file system
 
     -- dap
-    { import = "lazyvim.plugins.extras.dap.core" },               -- dap capabilities
+    { import = "lazyvim.plugins.extras.dap.core" }, -- dap capabilities
 
     -- formatting
-    { import = "lazyvim.plugins.extras.formatting.prettier" },    -- Prettier formmatter
+    { import = "lazyvim.plugins.extras.formatting.prettier" }, -- Prettier formmatter
 
     --linting
     { import = "lazyvim.plugins.extras.linting.eslint" }, -- javascript static linting
 
-
     -- highliting
     { import = "lazyvim.plugins.extras.lang.python-semshi" }, -- syntax highliting for python
     { import = "lazyvim.plugins.extras.util.mini-hipatterns" }, -- common highliting solutions
-
 
     -- none ls
     { import = "lazyvim.plugins.extras.lsp.none-ls" },
@@ -46,7 +44,6 @@ require("lazy").setup({
     --utils
     { import = "lazyvim.plugins.extras.util.dot" }, -- hyperland parser (https://github.com/hyprwm/Hyprland)
     { import = "lazyvim.plugins.extras.util.project" }, -- The superior project management solution for neovim.
-
 
     -- LSP
     { import = "lazyvim.plugins.extras.lang.python" },
@@ -61,7 +58,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.tailwind" },
     { import = "lazyvim.plugins.extras.lang.terraform" },
     { import = "lazyvim.plugins.extras.lang.typescript" },
-
+    { import = "lazyvim.plugins.extras.dap.nlua" },
 
     -- import/override with your plugins
     { import = "plugins" },
