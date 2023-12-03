@@ -18,6 +18,12 @@ A few tricks to find staff you want to do:
 - search online, there is a large Neovim community at you command!
 - read the LazyVim documentation given above, it might help you understand if what you want already exists, and if not how to add it (and create a PR😊)
 
+## Good places for searching plugins
+[neovimcraft](neovimcraft.com),
+[awesome-neovim](https://github.com/rockerBOO/awesome-neovim), 
+[github](https://github.com)
+
+
 ## TODO
 - make key maps for navigating in insert mode
 - make more key maps for gitsigns
