@@ -14,7 +14,8 @@ Already have some experience with vi/vim? Great! This IDE is just for you!
 If you want to do anything, there is a good chance it's already supported by the IDE. <br>
 A few tricks to find staff you want to do:
 
-- type \<leader>sk (\<leader> is the space key), this will give you a interface to search for keymaps
+- type \<leader>sk (\<leader> is the space key), this will give you a interface to search for keymaps.
+- type :h followed by the plugin name, this will open the plugin's documentation.
 - search online, there is a large Neovim community at you command!
 - read the LazyVim documentation given above, it might help you understand if what you want already exists, and if not how to add it (and create a PR😊)
 
@@ -34,3 +35,13 @@ A few tricks to find staff you want to do:
 - keymap for opening showing deleted files from mini.files
 - allow NeoTree to delete files(and move them to the trash) 
 - make NeoTest find test files from the project's root path(not only if it's open in buffer)
+- enable formatting of json (and json5) files
+- possible plugins to install:
+  - overseer.nvim
+  - tmux.nvim
+  - mini.visits
+  - color themes: vscode.nvim
+  - telescope-dapzzzz
+  - vim-local-history
+  - AI intellisense, options: ollama.nvim, llm.nvim, ChatGPT.nvim
+  - goneovim
