@@ -1,0 +1,31 @@
+name: artifact nvim generated folders
+run-name: ${{ github.actor}} make artifact of nvim generated folders
+on: [push]
+jobs:
+  artifact-neovim-generated-folders:
+    runs-on: ubuntu-latest
+    steps:
+      # this checkout moves repo to the $GITHUB_WORKSPACE directory
+      - name: checkout repo code to container
+        uses: actions/checkout@v4
+        
+      - name: move nvim configuration from repo
+        working-directory: ~/
+        run: mkdir -p .config/nvim; mv $GITHUB_WORKSPACE .config/nvim
+        
+        
+      - name: install neovim and its plugins
+        uses: rhysd/action-setup-vim@v1
+        with:
+          neovim: true
+          
+      - name: compress nvim generated folders
+        run: tar -czf build.tar.gz -C ~ .config/nvim/ .local/share/nvim
+        
+      - name: artifact nvim generated folders
+        uses: actions/upload-artifacts@v3
+        with:
+          name: generated nvim folders
+          path: ./build.tar.gz
+          retentions-days: 365
+      
