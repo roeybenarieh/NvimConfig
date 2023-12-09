@@ -13,10 +13,14 @@ jobs:
         run: cd /home/runner/; mkdir -p .config/nvim; mv $GITHUB_WORKSPACE/* .config/nvim
         
         
-      - name: install neovim and its plugins
+      - name: install neovim
         uses: rhysd/action-setup-vim@v1
         with:
           neovim: true
+
+      - name: install nvim plugins
+        # open nvim without UI, call ":Lazy install" and quit
+        run: nvim --headless -c "Lazy install" -c "qall"
           
       - name: compress nvim generated folders
         run: tar -czf build.tar.gz -C /home/runner/ .config/nvim/ .local/share/nvim
