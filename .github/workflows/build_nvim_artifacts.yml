@@ -13,9 +13,8 @@ jobs:
   artifact-neovim-generated-folders:
     runs-on: ubuntu-latest
     env:
-      CONF_PATH: $HOME_PATH/.config/nvim
-      LOCAL_DATA_PATH: $HOME_PATH/.local/share/nvim
-      BUILD_FILE_NAME: build.tar.gz
+      CONF_PATH: /home/runner/.config/nvim
+      LOCAL_DATA_PATH: /home/runner/.local/share/nvim
 
     steps:
       # this checkout moves repo to the $GITHUB_WORKSPACE directory
@@ -36,12 +35,12 @@ jobs:
         run: nvim --headless -c "Lazy install" -c "qall"
           
       - name: compress nvim generated folders
-        run: tar -czf $BUILD_FILE_NAME -C $HOME_PATH $CONF_PATH $LOCAL_DATA_PATH
+        run: tar -czf build.tar.gz -C $HOME_PATH $CONF_PATH $LOCAL_DATA_PATH
         
       - name: artifact nvim generated folders
         uses: actions/upload-artifact@v3
         with:
           name: generated nvim folders
-          path: $BUILD_FILE_NAME
+          path: build.tar.gz
           retention-days: 90
       
