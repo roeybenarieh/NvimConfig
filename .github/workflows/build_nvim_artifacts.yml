@@ -35,5 +35,5 @@ jobs:
         with:
           name: generated nvim folders
           path: build.tar.gz
-          retention-days: 365
+          retention-days: 90
       
