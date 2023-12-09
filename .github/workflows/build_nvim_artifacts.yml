@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v4
         
       - name: move nvim configuration from repo
-        working-directory: ~/
+        working-directory: $HOME
         run: mkdir -p .config/nvim; mv $GITHUB_WORKSPACE .config/nvim
         
         
