@@ -10,8 +10,7 @@ jobs:
         uses: actions/checkout@v4
         
       - name: move nvim configuration from repo
-        working-directory: $HOME
-        run: mkdir -p .config/nvim; mv $GITHUB_WORKSPACE .config/nvim
+        run: cd /home/runner/; mkdir -p .config/nvim; mv $GITHUB_WORKSPACE .config/nvim
         
         
       - name: install neovim and its plugins
