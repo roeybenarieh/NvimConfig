@@ -19,12 +19,12 @@ jobs:
           neovim: true
           
       - name: compress nvim generated folders
-        run: tar -czf build.tar.gz -C ~ .config/nvim/ .local/share/nvim
+        run: cd /home/runner/; tar -czf build.tar.gz -C ~ .config/nvim/ .local/share/nvim
         
       - name: artifact nvim generated folders
         uses: actions/upload-artifact@v3
         with:
           name: generated nvim folders
-          path: ./build.tar.gz
+          path: /home/runner/build.tar.gz
           retentions-days: 365
       
