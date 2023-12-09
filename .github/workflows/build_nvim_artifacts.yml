@@ -1,6 +1,10 @@
 name: artifact nvim generated folders
 run-name: ${{ github.actor}} make artifact of nvim generated folders
-on: [push]
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
 jobs:
   artifact-neovim-generated-folders:
     runs-on: ubuntu-latest
