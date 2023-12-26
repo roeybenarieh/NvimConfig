@@ -15,6 +15,8 @@ jobs:
     env:
       CONF_PATH: /home/runner/.config/nvim
       LOCAL_DATA_PATH: /home/runner/.local/share/nvim
+      LOCAL_STATE_PATH: /home/runner/.local/state/nvim
+      LOCAL_CACHE_PATH: /home/runner/.cache/nvim
 
     steps:
       # this checkout moves repo to the $GITHUB_WORKSPACE directory
@@ -35,7 +37,7 @@ jobs:
         run: nvim --headless -c "Lazy install" -c "qall"
           
       - name: compress nvim generated folders
-        run: tar -czf build.tar.gz -C $HOME_PATH $CONF_PATH $LOCAL_DATA_PATH
+        run: tar -czf build.tar.gz -C $HOME_PATH $CONF_PATH $LOCAL_DATA_PATH $LOCAL_STATE_PATH $LOCAL_CACHE_PATH
         
       - name: artifact nvim generated folders
         uses: actions/upload-artifact@v3
