@@ -3,12 +3,9 @@ run-name: ${{ github.actor}} make artifact of nvim generated folders
 on:
   workflow_dispatch:
   push:
-    branches:
-      - main
-      - feat/cicd
 env:
   HOME_PATH: /home/runner
-  
+
 jobs:
   artifact-neovim-generated-folders:
     runs-on: ubuntu-latest
@@ -22,11 +19,10 @@ jobs:
       # this checkout moves repo to the $GITHUB_WORKSPACE directory
       - name: checkout repo code to container
         uses: actions/checkout@v4
-        
+
       - name: move nvim configuration from repo
         run: mkdir -p $CONF_PATH; mv $GITHUB_WORKSPACE/* $CONF_PATH
-        
-        
+
       - name: install neovim
         uses: rhysd/action-setup-vim@v1
         with:
@@ -35,14 +31,13 @@ jobs:
       - name: install nvim plugins
         # open nvim without UI, call ":Lazy install" and quit
         run: nvim --headless -c "Lazy install" -c "qall"
-          
+
       - name: compress nvim generated folders
         run: tar -czf build.tar.gz -C $HOME_PATH $CONF_PATH $LOCAL_DATA_PATH $LOCAL_STATE_PATH $LOCAL_CACHE_PATH
-        
+
       - name: artifact nvim generated folders
         uses: actions/upload-artifact@v3
         with:
           name: generated nvim folders
           path: build.tar.gz
           retention-days: 90
-      
