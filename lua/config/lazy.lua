@@ -15,7 +15,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.ui.edgy" }, -- predefined windows layout
 
     -- import any extras modules here
-    { import = "lazyvim.plugins.extras.coding.codeium" }, -- AI autocompletion
+    { import = "lazyvim.plugins.extras.coding.copilot" }, -- AI autocompletion
     { import = "lazyvim.plugins.extras.coding.yanky" }, -- imporoved yank and put functionalities
     { import = "lazyvim.plugins.extras.editor.aerial" }, -- Neovim plugin for a code outline window
     { import = "lazyvim.plugins.extras.editor.leap" }, -- jump to words in the document
