@@ -29,11 +29,17 @@ jobs:
           neovim: true
 
       - name: install nvim plugins
-        # open nvim without UI, call ":Lazy install" and quit
-        run: nvim --headless -c "Lazy install" -c "qall"
+        # open nvim WITH UI, this will install all the plugins automaticaly
+        # HACK: Use of sleep is very bad but commands are not blocking (! in the lazy command is not working either. as of 5.Jan.2024 I couldn't find a better solution)
+        run: for i in {1..2}; do timeout 3m nvim -c "+Lazy! sync" | echo done, there are no errors; done
+        # run: nvim --headless nvim --headless "+Lazy! load mason.nvim +MasonInstall +sleep 45" +qa
+        # run: nvim --headless 'lua require("lazy").sync({wait = true})' +qa
+        # run: nvim --headless -c "+Lazy! install +sleep 45" -c "qall"
 
       - name: compress nvim generated folders
-        run: tar -czf build.tar.gz -C $HOME_PATH $CONF_PATH $LOCAL_DATA_PATH $LOCAL_STATE_PATH $LOCAL_CACHE_PATH
+        run: |
+          du -sh ~/.local/share/nvim
+          tar -czf build.tar.gz -C $HOME_PATH $CONF_PATH $LOCAL_DATA_PATH $LOCAL_STATE_PATH $LOCAL_CACHE_PATH
 
       - name: artifact nvim generated folders
         uses: actions/upload-artifact@v3
