@@ -3,44 +3,45 @@ run-name: ${{ github.actor}} make artifact of nvim generated folders
 on:
   workflow_dispatch:
   push:
-    branches:
-      - main
-      - feat/cicd
 env:
   HOME_PATH: /home/runner
-  
+
 jobs:
   artifact-neovim-generated-folders:
     runs-on: ubuntu-latest
     env:
       CONF_PATH: /home/runner/.config/nvim
       LOCAL_DATA_PATH: /home/runner/.local/share/nvim
+      LOCAL_STATE_PATH: /home/runner/.local/state/nvim
+      LOCAL_CACHE_PATH: /home/runner/.cache/nvim
 
     steps:
       # this checkout moves repo to the $GITHUB_WORKSPACE directory
       - name: checkout repo code to container
         uses: actions/checkout@v4
-        
+
       - name: move nvim configuration from repo
         run: mkdir -p $CONF_PATH; mv $GITHUB_WORKSPACE/* $CONF_PATH
-        
-        
+
       - name: install neovim
         uses: rhysd/action-setup-vim@v1
         with:
           neovim: true
 
       - name: install nvim plugins
-        # open nvim without UI, call ":Lazy install" and quit
-        run: nvim --headless -c "Lazy install" -c "qall"
-          
+        # open nvim WITH UI, this will install all the plugins automaticaly
+        # HACK: Use of sleep is very bad but commands are not blocking (! in the lazy command is not working either. as of 5.Jan.2024 I couldn't find a better solution)
+        run: timeout 5m nvim || echo done, there are no errors!
+        # run: nvim --headless nvim --headless "+Lazy! load mason.nvim +MasonInstall +sleep 45" +qa
+        # run: nvim --headless 'lua require("lazy").sync({wait = true})' +qa
+        # run: nvim --headless -c "+Lazy! install +sleep 45" -c "qall"
+
       - name: compress nvim generated folders
-        run: tar -czf build.tar.gz -C $HOME_PATH $CONF_PATH $LOCAL_DATA_PATH
-        
+        run: tar -czf build.tar.gz -C $HOME_PATH $CONF_PATH $LOCAL_DATA_PATH $LOCAL_STATE_PATH $LOCAL_CACHE_PATH
+
       - name: artifact nvim generated folders
         uses: actions/upload-artifact@v3
         with:
           name: generated nvim folders
           path: build.tar.gz
           retention-days: 90
-      
