@@ -173,6 +173,7 @@ function M.setup(adapter_python_path, opts)
       -- Options below are for debugpy
       -- see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for supported options
       program = "main.py",
+      justMyCode = false,
       console = opts.console,
       pythonPath = opts.pythonPath,
     })
@@ -182,14 +183,7 @@ function M.setup(adapter_python_path, opts)
       request = "launch",
       name = "Launch current file",
       program = "${file}", -- This configuration will launch the current file if used.
-      console = opts.console,
-      pythonPath = opts.pythonPath,
-    })
-    table.insert(configs, {
-      type = "python",
-      request = "launch",
-      name = "Launch file",
-      program = "${file}",
+      justMyCode = false,
       console = opts.console,
       pythonPath = opts.pythonPath,
     })
