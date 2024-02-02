@@ -23,6 +23,7 @@ A few tricks to find staff you want to do:
 [neovimcraft](neovimcraft.com),
 [awesome-neovim](https://github.com/rockerBOO/awesome-neovim), 
 [github](https://github.com)
+[Dotfyle](https://dotfyle.com)
 
 
 ## TODO
