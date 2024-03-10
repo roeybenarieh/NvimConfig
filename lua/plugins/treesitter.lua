@@ -1,5 +1,5 @@
 return {
-  -- add more treesitter parsers
+  -- https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#supported-languages
   "nvim-treesitter/nvim-treesitter",
   opts = {
     ensure_installed = {
@@ -25,11 +25,15 @@ return {
       "json5",
       "yaml",
       "ini",
+      "toml",
+      "requirements", -- python pip requirements
+      "nix",
       "git_config", -- .git/config file
       "git_rebase", -- git interactive rebase file
       "gitattributes", -- .gitattributes file, resource: https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes
       "gitcommit", -- git commit message using the "conventional commits" specifications
       "gitignore", -- .gitignore file
+      "comment", -- comments in any language
     },
   },
 }
