@@ -18,6 +18,7 @@ return {
       "query", -- for tree-sitter queries
       "sql",
       "promql",
+      "helm",
       "regex",
       "html",
       "css",
