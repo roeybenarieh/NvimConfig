@@ -477,6 +477,9 @@ return {
         venv_selector.hooks.pylance,
       }
 
+      -- dont go up in directories when searching for venv
+      opts.parents = 0
+
       -- change the VIRTUAL_ENV environment varialbe so daps could detect where the venv is
       --opts.dap_enabled = true
 
