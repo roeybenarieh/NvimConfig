@@ -32,7 +32,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.linting.eslint" }, -- javascript static linting
 
     -- highliting
-    { import = "lazyvim.plugins.extras.lang.python-semshi" }, -- syntax highliting for python
+    -- { import = "lazyvim.plugins.extras.lang.python-semshi" }, -- syntax highliting for python
     { import = "lazyvim.plugins.extras.util.mini-hipatterns" }, -- common highliting solutions
 
     -- none ls
