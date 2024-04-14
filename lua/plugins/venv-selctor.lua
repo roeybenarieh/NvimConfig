@@ -467,6 +467,7 @@ return {
       "mfussenegger/nvim-dap", -- for configuring dap to use venv
       "microsoft/debugpy", -- for configuring debugpy to use the venv (via dap-python.lua)
     },
+    lazy = true,
     opts = function(_, opts)
       local venv_selector = require("venv-selector")
       -- add hook for changing the dap configurations (configs used to decide how to run code)

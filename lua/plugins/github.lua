@@ -61,6 +61,7 @@ return {
       end,
     },
   },
+  lazy = true,
   config = function()
     require("litee.gh").setup()
     github_key_maps()

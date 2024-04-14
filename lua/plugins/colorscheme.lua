@@ -1,15 +1,15 @@
 return {
-  { "ellisonleao/gruvbox.nvim" },
+  { "ellisonleao/gruvbox.nvim", lazy = true },
   -- vscode like theme
-  { "Mofiqul/vscode.nvim" },
+  { "Mofiqul/vscode.nvim", lazy = true },
   -- IntelliJ like theme
-  { "briones-gabriel/darcula-solid.nvim", dependencies = "rktjmp/lush.nvim" },
+  { "briones-gabriel/darcula-solid.nvim", dependencies = "rktjmp/lush.nvim", lazy = true },
   -- catppuccino theme
-  { "catppuccin/nvim" },
+  { "catppuccin/nvim", lazy = true },
   -- github theme
-  { "projekt0n/github-nvim-theme" },
+  { "projekt0n/github-nvim-theme", lazy = true },
   -- onedark theme
-  { "navarasu/onedark.nvim" },
+  { "navarasu/onedark.nvim", lazy = true },
 
   -- Configure LazyVim to load gruvbox
   {

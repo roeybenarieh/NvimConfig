@@ -1,6 +1,7 @@
 local keymap = vim.api.nvim_set_keymap
 return {
   "Weissle/persistent-breakpoints.nvim",
+  lazy = true,
   config = function()
     require("persistent-breakpoints").setup({
       load_breakpoints_event = { "BufReadPost" },

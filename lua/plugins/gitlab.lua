@@ -15,6 +15,7 @@ return {
     "stevearc/dressing.nvim", -- Better UI for pickers, not required.
     enabled = true,
   },
+  lazy = true,
   build = function()
     require("gitlab.server").build(true)
   end, -- Builds the Go binary

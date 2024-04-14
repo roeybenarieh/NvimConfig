@@ -1,6 +1,6 @@
 return {
   "LintaoAmons/scratch.nvim",
-  event = "VeryLazy",
+  lazy = true,
   keys = {
     { "<leader>fsn", "<cmd>Scratch<cr>", desc = "new scratch file" },
     { "<leader>fsN", "<cmd>ScratchWithName<cr>", desc = "new named scratch file" },

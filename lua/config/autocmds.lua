@@ -5,7 +5,7 @@
 -- activate python venv when Nvim open
 vim.api.nvim_create_autocmd("BufEnter", {
   desc = "Auto select virtualenv Nvim open",
-  pattern = "*",
+  pattern = "*.py",
   callback = function()
     require("venv-selector").retrieve_from_cache()
   end,
