@@ -31,6 +31,7 @@ end
 
 return {
   "m-demare/attempt.nvim",
+  lazy = true,
   dependencies = {
     "nvim-lua/plenary.nvim", -- for configuring debugpy to use the venv (via dap-python.lua)
     "nvim-telescope/telescope-ui-select.nvim",

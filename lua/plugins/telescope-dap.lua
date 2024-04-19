@@ -31,6 +31,7 @@ end
 
 return {
   "nvim-telescope/telescope-dap.nvim",
+  lazy = true,
   dependencies = {
     "telescope.nvim",
     "nvim-treesitter/nvim-treesitter",
