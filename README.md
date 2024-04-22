@@ -1,6 +1,6 @@
 # 💤 RoeyLazyVim
 
-Refer to LazyVim [documentation](https://lazyvim.github.io/installation). \
+Refer to LazyVim [documentation](https://lazyvim.github.io/installation).  
 If You **REALLY** insist, you are welcome to
 browse Neovim [documentation](https://neovim.io/doc/user/) as well.
 
@@ -9,17 +9,17 @@ browse Neovim [documentation](https://neovim.io/doc/user/) as well.
 You probably used vscode/pycharm, and you are asking yourself what is the point
 of life? Why am I being drag down by this IDE 😞
 
-Say hello to RoeyLazyVim! \
+Say hello to RoeyLazyVim!  
 The only IDE that doesn't make you shoot yourself in the foot while
 you're using it.
-It has everything you used to and even more! \
+It has everything you used to and even more!
 
 Already have some experience with vi/vim? Great! This IDE is just for you!
 
 ## I'm stack, what should I do?
 
 If you want to do anything,
-there is a good chance it's already supported by the IDE. \
+there is a good chance it's already supported by the IDE.  
 A few tricks to find staff you want to do:
 
 - type \<leader>sk (\<leader> is the space key),
@@ -32,10 +32,21 @@ A few tricks to find staff you want to do:
 
 ## Good places for searching plugins
 
-[neovimcraft](neovimcraft.com),
-[awesome-neovim](https://github.com/rockerBOO/awesome-neovim),
-[github](https://github.com)
-[Dotfyle](https://dotfyle.com)
+- [neovimcraft](neovimcraft.com),
+- [awesome-neovim](https://github.com/rockerBOO/awesome-neovim),
+- [github](https://github.com)
+- [Dotfyle](https://dotfyle.com)
+
+## Good places for documentation
+
+None official sites
+
+- [LazyVim plugin configuration](https://dev.to/vonheikemen/lazynvim-plugin-configuration-3opi)
+
+Official sites
+
+- [Lazyvim](https://lazyvim.org)
+- [Neovim](https://neovim.io)
 
 ## TODO
 
@@ -54,8 +65,5 @@ A few tricks to find staff you want to do:
   - tmux.nvim
   - nvim-dev-container
   - mini.visits
-  - color themes: vscode.nvim
   - telescope-dapzzzz
-  - vim-local-history
   - AI intellisense, options: ollama.nvim, llm.nvim, ChatGPT.nvim
-  - goneovim
