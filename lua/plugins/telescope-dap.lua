@@ -4,30 +4,32 @@ local telescope_dap_key_maps = function()
     d = {
       L = {
         name = "list dap statistics",
+        -- in all of those mappings Telescope will automatically load telescope-dap plugin (without needing to require it)
         C = {
-          require("telescope").extensions.dap.commands,
+          "<cmd> Telescope dap commands <CR>",
           "list debug commands",
         },
         c = {
-          require("telescope").extensions.dap.configurations,
+          "<cmd> Telescope dap configurations<CR>",
           "list debug configurations",
         },
         b = {
-          require("telescope").extensions.dap.list_breakpoints,
+          "<cmd> Telescope dap list_breakpoints<CR>",
           "list debug breakpoints",
         },
         v = {
-          require("telescope").extensions.dap.variables,
+          "<cmd> Telescope dap variables<CR>",
           "list debug variables",
         },
         f = {
-          require("telescope").extensions.dap.frames,
+          "<cmd> Telescope dap frames<CR>",
           "list debug frames",
         },
       },
     },
   }, { prefix = "<leader>" })
 end
+telescope_dap_key_maps()
 
 return {
   "nvim-telescope/telescope-dap.nvim",
@@ -36,6 +38,4 @@ return {
     "telescope.nvim",
     "nvim-treesitter/nvim-treesitter",
   },
-  -- config the plugin by creating the required key maps
-  config = telescope_dap_key_maps,
 }
