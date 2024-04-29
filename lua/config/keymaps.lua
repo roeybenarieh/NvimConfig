@@ -13,3 +13,9 @@ end, { desc = "increase text/font size" })
 map("n", "<C-->", function()
   write_err_to_user("decrease text size by pressing Ctrl + -")
 end, { desc = "decrease text/font size" })
+
+-- usually Ctrl+h is defaulty interpreted as a back space, overriding it with movement in insert mode
+-- noremap is used to prevent recursive mapping
+map("i", "<C-h>", "<Left>", { noremap = true, desc = "move left" })
+-- keymap for moving to the right in insert mode
+vim.api.nvim_set_keymap("i", "<C-h>", "<Right>", { noremap = true })
