@@ -50,11 +50,8 @@ Official sites
 
 ## TODO
 
-- make key maps for navigating in insert mode
-- make jbyuki/one-small-step-for-vimkind work
 - undo file tree changes like deleting, moving, renaming files.(maybe venv-local-history)
 - install plugins: LLM capability, gitlab integrations, overseer.nvim
-- handle big files
 - keymap for opening showing deleted files from mini.files
 - allow NeoTree to delete files(and move them to the trash)
 - make NeoTest find test files from the project's root path
