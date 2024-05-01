@@ -15,6 +15,7 @@ return {
   },
   {
     "Weissle/persistent-breakpoints.nvim",
+    event = "LspAttach",
     opts = {
       load_breakpoints_event = "LspAttach",
     },
