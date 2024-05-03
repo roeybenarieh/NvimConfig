@@ -18,4 +18,4 @@ end, { desc = "decrease text/font size" })
 -- noremap is used to prevent recursive mapping
 map("i", "<C-h>", "<Left>", { noremap = true, desc = "move left" })
 -- keymap for moving to the right in insert mode
-vim.api.nvim_set_keymap("i", "<C-h>", "<Right>", { noremap = true })
+vim.api.nvim_set_keymap("i", "<C-l>", "<Right>", { noremap = true })
