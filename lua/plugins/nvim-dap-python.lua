@@ -22,11 +22,23 @@ return {
     -- add python debug configurations
     local dap = require("dap")
     table.insert(dap.configurations.python, {
-      type = "python", -- the type here established the link to the adapter definition: `dap.adapters.python`
+      type = "python",
       request = "launch",
       name = "Launch main.py",
-      program = "main.py", -- This configuration will launch the current file if used.
+      program = "main.py",
       pythonPath = get_python_interpreter_path,
     })
+    -- change every configuration to not use just my code
+    for _, config in ipairs(dap.configurations.python) do
+      config["justMyCode"] = false
+      config["rules"] = {
+        -- these rules are not documented. they are only present in debugpy code.
+        -- the code is at the function _convert_rules_to_exclude_filters in the url:
+        -- https://github.com/microsoft/debugpy/blob/42853a99c4d3d4d27e4960c8894d780d4f091d68/src/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_process_net_command_json.py#L1
+        { module = "runpy", include = false },
+        { module = "pytest", include = false },
+        { module = "neotest_python", include = false },
+      }
+    end
   end,
 }
