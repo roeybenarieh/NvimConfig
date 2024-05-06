@@ -6,7 +6,6 @@ end
 
 return {
   "mfussenegger/nvim-dap-python",
-  dependencies = { "linux-cultist/venv-selector.nvim" },
   config = function()
     -- code from lazyvim
     local path = require("mason-registry").get_package("debugpy"):get_install_path()
