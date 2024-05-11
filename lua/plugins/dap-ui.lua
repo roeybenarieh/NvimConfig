@@ -1,9 +1,6 @@
 return {
   {
     "rcarriga/nvim-dap-ui",
-    dependencies = {
-      "mfussenegger/nvim-dap",
-    },
     -- override lavyvim's config
     -- for more information on the events dap has, see:
     -- the possible events: https://microsoft.github.io/debug-adapter-protocol/specification#Events_Exited
@@ -23,19 +20,5 @@ return {
       --   dapui.close({})
       -- end
     end,
-    keys = {
-      {
-        "<leader>dt",
-        function()
-          require("dap").terminate()
-          require("dapui").close()
-        end,
-        desc = "Terminate",
-        -- non-recursive mapping
-        noremap = false,
-        -- silent meaning no message will be displayed
-        silent = true,
-      },
-    },
   },
 }
