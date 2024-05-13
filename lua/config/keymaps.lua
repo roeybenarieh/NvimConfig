@@ -19,3 +19,8 @@ end, { desc = "decrease text/font size" })
 map("i", "<C-h>", "<Left>", { noremap = true, desc = "move left" })
 -- keymap for moving to the right in insert mode
 vim.api.nvim_set_keymap("i", "<C-l>", "<Right>", { noremap = true })
+
+-- keymap for moving the line below the cursor to the end of the current line
+map("n", "<S-j>", "J", { desc = "move line below to end of current line" })
+-- keymap for moving the current line to the end of the line above
+map("n", "<S-u>", "kJ", { desc = "move current line to end of line above" })
