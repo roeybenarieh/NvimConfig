@@ -1,6 +1,46 @@
 return {
   {
     "rcarriga/nvim-dap-ui",
+    opts = {
+      layouts = {
+        {
+          elements = {
+            {
+              id = "scopes", -- variables values and their scope
+              size = 0.25,
+            },
+            {
+              id = "watches", -- for constant expressions evaluation
+              size = 0.25,
+            },
+            {
+              id = "breakpoints", -- breakpoints list
+              size = 0.25,
+            },
+            {
+              id = "stacks", -- call stack
+              size = 0.25,
+            },
+          },
+          position = "right",
+          size = 40,
+        },
+        {
+          elements = {
+            -- {
+            --   id = "repl",
+            --   size = 0.5,
+            -- },
+            {
+              id = "console",
+              size = 1,
+            },
+          },
+          position = "bottom",
+          size = 10,
+        },
+      },
+    },
     -- override lavyvim's config
     -- for more information on the events dap has, see:
     -- the possible events: https://microsoft.github.io/debug-adapter-protocol/specification#Events_Exited
