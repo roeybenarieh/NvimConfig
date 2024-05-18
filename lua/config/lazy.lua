@@ -17,6 +17,8 @@ require("lazy").setup({
     -- import any extras modules here
     { import = "lazyvim.plugins.extras.coding.copilot" }, -- AI autocompletion
     { import = "lazyvim.plugins.extras.coding.yanky" }, -- imporoved yank and put functionalities
+    { import = "lazyvim.plugins.extras.coding.mini-surround" }, -- surround text with stuff
+    { import = "lazyvim.plugins.extras.coding.mini-comment" }, -- create code comments
     { import = "lazyvim.plugins.extras.editor.aerial" }, -- Neovim plugin for a code outline window
     { import = "lazyvim.plugins.extras.editor.leap" }, -- jump to words in the document
     { import = "lazyvim.plugins.extras.editor.navic" }, -- Simple winbar/statusline plugin that shows your current code context
