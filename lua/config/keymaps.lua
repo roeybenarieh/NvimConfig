@@ -24,3 +24,6 @@ vim.api.nvim_set_keymap("i", "<C-l>", "<Right>", { noremap = true })
 map("n", "<S-j>", "J", { desc = "move line below to end of current line" })
 -- keymap for moving the current line to the end of the line above
 map("n", "<S-u>", "kJ", { desc = "move current line to end of line above" })
+
+-- opening git repo in browser
+map("n", "<leader>gBB", "<leader>gB", { desc = "open git repository in browser(gitlab/github)", remap = true })
