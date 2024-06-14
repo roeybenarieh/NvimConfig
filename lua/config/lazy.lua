@@ -16,6 +16,7 @@ require("lazy").setup({
 
     -- import any extras modules here
     { import = "lazyvim.plugins.extras.coding.copilot" }, -- AI autocompletion
+    { import = "lazyvim.plugins.extras.coding.copilot-chat" }, -- AI chat
     { import = "lazyvim.plugins.extras.coding.yanky" }, -- imporoved yank and put functionalities
     { import = "lazyvim.plugins.extras.coding.mini-surround" }, -- surround text with stuff
     { import = "lazyvim.plugins.extras.coding.mini-comment" }, -- create code comments
