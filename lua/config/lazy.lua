@@ -24,6 +24,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.editor.leap" }, -- jump to words in the document
     { import = "lazyvim.plugins.extras.editor.navic" }, -- Simple winbar/statusline plugin that shows your current code context
     { import = "lazyvim.plugins.extras.editor.mini-files" }, -- Navigate and manipulate file system
+    { import = "lazyvim.plugins.extras.editor.inc-rename" },
 
     -- dap
     { import = "lazyvim.plugins.extras.dap.core" }, -- dap capabilities
