@@ -1,8 +1,6 @@
 return {
   -- annotation generator
   "danymat/neogen",
-  dependencies = "nvim-treesitter/nvim-treesitter",
-  version = "*", -- follow only stable versions
   keys = {
     {
       "<leader>cds",
@@ -14,7 +12,6 @@ return {
   },
   opts = {
     enabled = true,
-    snippet_engine = "luasnip", -- integration with snippet engine, help with cycling support.
     languages = {
       python = {
         template = {
