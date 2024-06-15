@@ -1,7 +1,7 @@
 local function get_python_interpreter_path()
   -- the VIRTUAL_ENV variable is set by the venv-selector plugin, but I couldn't make it work(cant get the env variable although exists in terminal)
   -- in case of nil, the default debugpy interpreter will be used
-  return require("venv-selector").get_active_path() or nil
+  return require("venv-selector").python() or nil
 end
 
 return {
