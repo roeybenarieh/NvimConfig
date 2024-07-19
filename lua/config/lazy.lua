@@ -51,7 +51,7 @@ require("lazy").setup({
     --utils
     { import = "lazyvim.plugins.extras.util.dot" }, -- hyperland parser (https://github.com/hyprwm/Hyprland)
     { import = "lazyvim.plugins.extras.util.project" }, -- The superior project management solution for neovim.
-    { import = "lazyvim.plugins.extras.editor.fzf" }, -- fzf integration
+    { import = "lazyvim.plugins.extras.editor.telescope" }, -- telescope fzf integration and more
 
     -- languages
     { import = "lazyvim.plugins.extras.lang.python" },
