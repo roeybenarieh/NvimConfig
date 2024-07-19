@@ -29,6 +29,7 @@ return {
       "toml",
       "requirements", -- python pip requirements
       "nix",
+      "just",
       "git_config", -- .git/config file
       "git_rebase", -- git interactive rebase file
       "gitattributes", -- .gitattributes file, resource: https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes
