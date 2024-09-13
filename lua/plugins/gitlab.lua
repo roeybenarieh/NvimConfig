@@ -1,10 +1,8 @@
 -- registering the gitlab keymap prefix
 local wk = require("which-key")
-wk.register({ ["<leader>"] = {
-  gl = {
-    name = "MR gitlab handler",
-  },
-} })
+wk.add({
+  { "<leader>gl", group = "MR gitlab handler" },
+})
 
 return {
   "harrisoncramer/gitlab.nvim",

@@ -1,41 +1,41 @@
 local attempt_key_maps = function()
   local wk = require("which-key")
-  wk.register({
-    f = {
-      s = {
-        name = "scratch files",
-        N = {
-          function()
-            require("attempt").new_input_ext()
-          end,
-          "new named scratch file",
-        },
-        n = {
-          function()
-            require("attempt").new_select()
-          end,
-          "new scratch file",
-        },
-        r = {
-          function()
-            require("attempt").rename_buf()
-          end,
-          "rename scratch file",
-        },
-        d = {
-          function()
-            require("attempt").delete_buf()
-          end,
-          "delete scratch file",
-        },
-        o = {
-          -- Telescope automaticly setup attempt in this case
-          "<cmd> Telescope attempt <cr>",
-          "open scratch file",
-        },
-      },
+  wk.add({
+    { "<leader>fs", group = "scratch files" },
+    {
+      "<leader>fsn",
+      function()
+        require("attempt").new_select()
+      end,
+      desc = "new scratch file",
     },
-  }, { prefix = "<leader>" })
+    {
+      "<leader>fso",
+      "<cmd> Telescope attempt <cr>",
+      desc = "open scratch file",
+    },
+    {
+      "<leader>fsr",
+      function()
+        require("attempt").rename_buf()
+      end,
+      desc = "rename scratch file",
+    },
+    {
+      "<leader>fsd",
+      function()
+        require("attempt").delete_buf()
+      end,
+      desc = "delete scratch file",
+    },
+    {
+      "<leader>fsN",
+      function()
+        require("attempt").new_input_ext()
+      end,
+      desc = "new named scratch file",
+    },
+  })
 end
 attempt_key_maps()
 

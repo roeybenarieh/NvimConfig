@@ -1,16 +1,51 @@
 local github_key_maps = function()
   local wk = require("which-key")
+  wk.add({
+    { "<leader>gh", group = "Github" },
+
+    { "leader>ghc", group = "Github Commits" },
+    { "<leader>ghcc>", "<cmd>GHCloseCommit<cr>", desc = "Close" },
+    { "<leader>ghce", "<cmd>GHExpandCommit<cr>", desc = "Expand" },
+    { "<leader>ghco", "<cmd>GHOpenToCommit<cr>", desc = "Open To" },
+    { "<leader>ghcp", "<cmd>GHPopOutCommit<cr>", desc = "Pop Out" },
+    { "<leader>ghcz", "<cmd>GHCollapseCommit<cr>", desc = "Collapse" },
+
+    { "leader>ghi", group = "Github Issues" },
+    { "<leader>ghip", "<cmd>GHPreviewIssue<cr>", desc = "Preview" },
+
+    { "leader>ghl", group = "Github Litee" },
+    { "<leader>ghlt", "<cmd>LTPanel<cr>", desc = "Toggle Panel" },
+
+    { "leader>ghr", group = "Github Review" },
+    { "<leader>ghrb", "<cmd>GHStartReview<cr>", desc = "Begin" },
+    { "<leader>ghrc", "<cmd>GHCloseReview<cr>", desc = "Close" },
+    { "<leader>ghrd", "<cmd>GHDeleteReview<cr>", desc = "Delete" },
+    { "<leader>ghre", "<cmd>GHExpandReview<cr>", desc = "Expand" },
+    { "<leader>ghrs", "<cmd>GHSubmitReview<cr>", desc = "Submit" },
+    { "<leader>ghrz", "<cmd>GHCollapseReview<cr>", desc = "Collapse" },
+
+    { "leader>ghp", group = "Github Pull Request" },
+    { "<leader>ghpc", "<cmd>GHClosePR<cr>", desc = "Close" },
+    { "<leader>ghpd", "<cmd>GHPRDetails<cr>", desc = "Details" },
+    { "<leader>ghpd", "<cmd>GHExpandPR<cr>", desc = "Expand" },
+    { "<leader>ghpo", "<cmd>GHOpenPR<cr>", desc = "Open" },
+    { "<leader>ghpp", "<cmd>GHPopOutPR<cr>", desc = "PopOut" },
+    { "<leader>ghpr", "<cmd>GHRefreshPR<cr>", desc = "Refresh" },
+    { "<leader>ghpt", "<cmd>GHOpenToPR<cr>", desc = "Open To" },
+    { "<leader>ghpz", "<cmd>GHCollapsePR<cr>", desc = "Collapse" },
+
+    { "leader>ght", group = "Github Threads" },
+    { "<leader>ghtc", "<cmd>GHCreateThread<cr>", desc = "Create" },
+    { "<leader>ghtn", "<cmd>GHNextThread<cr>", desc = "Next" },
+    { "<leader>ghtt", "<cmd>GHToggleThread<cr>", desc = "Toggle" },
+  })
+
   wk.register({
     g = {
       h = {
         name = "+Github",
         c = {
           name = "+Commits",
-          c = { "<cmd>GHCloseCommit<cr>", "Close" },
-          e = { "<cmd>GHExpandCommit<cr>", "Expand" },
-          o = { "<cmd>GHOpenToCommit<cr>", "Open To" },
-          p = { "<cmd>GHPopOutCommit<cr>", "Pop Out" },
-          z = { "<cmd>GHCollapseCommit<cr>", "Collapse" },
         },
         i = {
           name = "+Issues",

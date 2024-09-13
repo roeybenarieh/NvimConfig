@@ -1,33 +1,33 @@
 local telescope_dap_key_maps = function()
   local wk = require("which-key")
-  wk.register({
-    d = {
-      L = {
-        name = "list dap statistics",
-        -- in all of those mappings Telescope will automatically load telescope-dap plugin (without needing to require it)
-        C = {
-          "<cmd> Telescope dap commands <CR>",
-          "list debug commands",
-        },
-        c = {
-          "<cmd> Telescope dap configurations<CR>",
-          "list debug configurations",
-        },
-        b = {
-          "<cmd> Telescope dap list_breakpoints<CR>",
-          "list debug breakpoints",
-        },
-        v = {
-          "<cmd> Telescope dap variables<CR>",
-          "list debug variables",
-        },
-        f = {
-          "<cmd> Telescope dap frames<CR>",
-          "list debug frames",
-        },
-      },
+  wk.add({
+    { "<leader>dL", group = "list dap statistics" },
+    {
+      "<leader>dLC",
+      "<cmd> Telescope dap commands <CR>",
+      desc = "list debug commands",
     },
-  }, { prefix = "<leader>" })
+    {
+      "<leader>dLc",
+      "<cmd> Telescope dap configurations<CR>",
+      desc = "list debug configurations",
+    },
+    {
+      "<leader>dLb",
+      "<cmd> Telescope dap list_breakpoints<CR>",
+      desc = "list debug breakpoints",
+    },
+    {
+      "<leader>dLv",
+      "<cmd> Telescope dap variables<CR>",
+      desc = "list debug variables",
+    },
+    {
+      "<leader>dLf",
+      "<cmd> Telescope dap frames<CR>",
+      desc = "list debug frames",
+    },
+  })
 end
 telescope_dap_key_maps()
 
@@ -38,4 +38,7 @@ return {
     "telescope.nvim",
     "nvim-treesitter/nvim-treesitter",
   },
+  -- keys = {
+  --   "<leader>dLC",
+  -- },
 }

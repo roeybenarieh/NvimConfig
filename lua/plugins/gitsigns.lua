@@ -20,22 +20,18 @@ return {
 
       -- stylua: ignore start
       local wk = require("which-key")
-      wk.register({
-        g = {
-          a = {
-            name = "+Action",
-            s = { mode = { "n", "v" }, ":Gitsigns stage_hunk<CR>", "Stage Hunk" },
-            r = { mode = { "n", "v" }, ":Gitsigns reset_hunk<CR>", "Reset Hunk" },
-            S = { gs.stage_buffer, "Stage Buffer" },
-            u = { mode = { "n", "v" }, gs.undo_stage_hunk, "Undo Stage Hunk" },
-            R = { gs.reset_buffer, "Reset Buffer" },
-            p = { mode = { "n", "v" }, gs.preview_hunk, "Preview Hunk" },
-            b = { function() gs.blame_line({ full = true }) end, "Blame Line" },
-            d = { mode = { "n", "v" }, gs.diffthis, "Diff This" },
-            D = { function() gs.diffthis("~") end, "Diff this ~" },
-          },
-        }
-      }, { prefix = "<leader>" })
+      wk.add({
+        { "<leader>ga", group = "git actions" },
+        { "<leader>gas", ":Gitsigns stage_hunk<CR>", desc="Stage Hunk" ,mode = { "n", "v" }},
+        { "<leader>gar", ":Gitsigns reset_hunk<CR>", desc="Reset Hunk" ,mode = { "n", "v" }},
+        { "<leader>gaS", gs.stage_buffer, desc="Stage Buffer" },
+        { "<leader>gau", gs.undo_stage_hunk, desc="Undo Stage Hunk" ,mode = { "n", "v" }},
+        { "<leader>gaR", gs.reset_buffer, desc="Reset Buffer" },
+        { "<leader>gap", gs.preview_hunk, desc="Preview Hunk" ,mode = { "n", "v" }},
+        { "<leader>gab", function() gs.blame_line({ full = true }) end, desc="Blame Line" },
+        { "<leader>gad", gs.diffthis, desc="Diff This" ,mode = { "n", "v" }},
+        { "<leader>gaD", function() gs.diffthis("~") end, desc="Diff this ~" },
+      })
 
       map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "GitSigns Select Hunk")
       map("n", "]h", gs.next_hunk, "Next Hunk")
