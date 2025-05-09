@@ -25,9 +25,10 @@ return {
   {
     "mfussenegger/nvim-dap-python",
     config = function()
-      -- code from lazyvim
-      local path = require("mason-registry").get_package("debugpy"):get_install_path()
-      require("dap-python").setup(path .. "/venv/bin/python", {
+      -- https://github.com/mason-org/mason.nvim/discussions/33#discussioncomment-3110418
+      -- https://github.com/mason-org/mason.nvim/blob/7c7318e8bae7e3536ef6b9e86b9e38e74f2e125e/CHANGELOG.md?plain=1#L65
+      local python_path = "$MASON/packages/debugpy/venv/bin/python"
+      require("dap-python").setup(python_path, {
         include_configs = true,
         -- ignore the lsp warning, nvim-dap-python expect a string, but I want that every time the
         -- configuration is called, the function get_python_interpreter_path is called(just like the configuration below)
