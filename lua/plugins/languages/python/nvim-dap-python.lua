@@ -24,6 +24,9 @@ end
 return {
   {
     "mfussenegger/nvim-dap-python",
+    dependencies = {
+      "mason-org/mason.nvim",
+    },
     config = function()
       -- https://github.com/mason-org/mason.nvim/discussions/33#discussioncomment-3110418
       -- https://github.com/mason-org/mason.nvim/blob/7c7318e8bae7e3536ef6b9e86b9e38e74f2e125e/CHANGELOG.md?plain=1#L65
