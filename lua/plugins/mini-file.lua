@@ -1,5 +1,5 @@
 return {
-  "echasnovski/mini.files",
+  "nvim-mini/mini.files",
   opts = {
     options = {
       -- Whether to delete permanently or move into module-specific trash

@@ -2,7 +2,7 @@
 return {
   -- tell mason to install nixpkgs_fmt
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     opts = function(_, opts)
       vim.list_extend(opts.ensure_installed or {}, { "nixpkgs-fmt" })
     end,
