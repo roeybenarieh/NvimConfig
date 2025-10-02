@@ -7,7 +7,5 @@
 -- https://stackoverflow.com/questions/30691466/what-is-difference-between-vims-clipboard-unnamed-and-unnamedplus-settings
 vim.cmd("set clipboard^=unnamed,unnamedplus")
 
-
 -- Neovide related options
-vim.g.neovide_transparency = 0.95
-vim.g.neovide_scroll_animation_length = 0.06
+vim.g.neovide_scroll_animation_length = 0.03
