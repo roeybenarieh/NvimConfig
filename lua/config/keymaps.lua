@@ -28,12 +28,25 @@ map("n", "<S-u>", "kJ", { desc = "move current line to end of line above" })
 -- opening git repo in browser
 map("n", "<leader>gBB", "<leader>gB", { desc = "open git repository in browser(gitlab/github)", remap = true })
 
--- Ctrl+Shift+c and Ctrl+Shift+v functionality in neovide
+-- functionalities only for neovide
 if vim.g.neovide then
+  function ScaleFont(delta)
+    vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + delta
+  end
+
+  -- Ctrl+Shift+c and Ctrl+Shift+v
   vim.api.nvim_set_keymap("v", "<sc-c>", '"+y', { noremap = true })
   vim.api.nvim_set_keymap("n", "<sc-v>", 'l"+P', { noremap = true })
   vim.api.nvim_set_keymap("v", "<sc-v>", '"+P', { noremap = true })
   vim.api.nvim_set_keymap("c", "<sc-v>", "<C-R>0", { noremap = true })
   vim.api.nvim_set_keymap("i", "<sc-v>", '<ESC>l"+Pli', { noremap = true })
   vim.api.nvim_set_keymap("t", "<sc-v>", '<C-\\><C-n>"+Pi', { noremap = true })
+
+  -- Ctrl++ Ctrl+-
+  vim.keymap.set({ "n", "v" }, "<C-=>", function()
+    ScaleFont(0.1)
+  end, { desc = "increase font size" })
+  vim.keymap.set({ "n", "v" }, "<C-->", function()
+    ScaleFont(-0.1)
+  end, { desc = "decrease font size" })
 end
