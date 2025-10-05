@@ -38,7 +38,7 @@ if vim.g.neovide then
   vim.api.nvim_set_keymap("v", "<sc-c>", '"+y', { noremap = true })
   vim.api.nvim_set_keymap("n", "<sc-v>", 'l"+P', { noremap = true })
   vim.api.nvim_set_keymap("v", "<sc-v>", '"+P', { noremap = true })
-  vim.api.nvim_set_keymap("c", "<sc-v>", "<C-R>0", { noremap = true })
+  vim.api.nvim_set_keymap("c", "<sc-v>", "<C-R>+", { noremap = true })
   vim.api.nvim_set_keymap("i", "<sc-v>", '<ESC>l"+Pli', { noremap = true })
   vim.api.nvim_set_keymap("t", "<sc-v>", '<C-\\><C-n>"+Pi', { noremap = true })
 
