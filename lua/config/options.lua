@@ -8,4 +8,5 @@
 vim.cmd("set clipboard^=unnamed,unnamedplus")
 
 -- Neovide related options
-vim.g.neovide_scroll_animation_length = 0.03
+vim.g.neovide_cursor_animation_length = 0 -- makes cursor scrolling smooth, though keyboard scrolling is instant
+vim.g.neovide_scroll_animation_length = 0.2
