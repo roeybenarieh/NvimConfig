@@ -18,6 +18,7 @@ return {
     event = "LspAttach",
     opts = {
       load_breakpoints_event = "BufReadPost",
+      always_reload = true,
     },
     keys = {
       {
