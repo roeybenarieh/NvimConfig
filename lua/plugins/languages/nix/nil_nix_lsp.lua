@@ -15,7 +15,7 @@ return {
       servers = { nil_ls = {} },
       setup = {
         ["nil_ls"] = function()
-          LazyVim.lsp.on_attach(function(client, _)
+          Snacks.util.lsp.on(function(_, client)
             if client.name == "nil_ls" then
               client.settings = {
                 ["nil"] = {
