@@ -13,13 +13,17 @@ return {
               id = "watches", -- for constant expressions evaluation
               size = 0.25,
             },
+            -- {
+            --   id = "breakpoints", -- breakpoints list
+            --   size = 0.25,
+            -- },
+            -- {
+            --   id = "stacks", -- call stack
+            --   size = 0.25,
+            -- },
             {
-              id = "breakpoints", -- breakpoints list
-              size = 0.25,
-            },
-            {
-              id = "stacks", -- call stack
-              size = 0.25,
+              id = "console", -- call stack
+              size = 0.5,
             },
           },
           position = "right",
@@ -27,14 +31,14 @@ return {
         },
         {
           elements = {
-            -- {
-            --   id = "repl",
-            --   size = 0.5,
-            -- },
             {
-              id = "console",
+              id = "repl",
               size = 1,
             },
+            -- {
+            --   id = "console",
+            --   size = 1,
+            -- },
           },
           position = "bottom",
           size = 10,
