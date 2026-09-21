@@ -10,3 +10,6 @@ vim.cmd("set clipboard^=unnamed,unnamedplus")
 -- Neovide related options
 vim.g.neovide_cursor_animation_length = 0 -- makes cursor scrolling smooth, though keyboard scrolling is instant
 vim.g.neovide_scroll_animation_length = 0.2
+-- nvim 0.12 introduced a default guifont on Linux ("Source Code Pro,...") which isn't installed;
+-- override it explicitly so neovide uses JetBrainsMono Nerd Font
+vim.o.guifont = "JetBrainsMono Nerd Font:h15"
